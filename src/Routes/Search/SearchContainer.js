@@ -19,7 +19,7 @@ class SearchContainer extends Component {
     }
 
     searchByTerm = async () => {
-        const { searchByTerm } = this.state;
+        const { searchTerm } = this.state;
         this.setState({loading: true});
 
         try{
@@ -49,7 +49,7 @@ class SearchContainer extends Component {
             searchTerm={searchTerm}
             error={error}
             loading={loading}
-            handleSubmit = {handleSubmit}
+            handleSubmit = {this.handleSubmit}
            />
         );
     }

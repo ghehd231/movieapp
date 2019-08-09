@@ -35,6 +35,7 @@ const TVPresenter = ({topRated, popular, airing_today, loading, error}) => (
             </Section>
             )}
             {error && <Message color="#e74c3c" text={error}></Message>}
+            
         </Container>
     )
 );

@@ -23,13 +23,14 @@ export default class extends React.Component{
             
             const {
                 data: { results: airingToday }
-            } = await tvApi.airingToday();
+            } = await tvApi.airing_today();
             this.setState({
                 topRated,
                 popular,
                 airingToday
             });
-        }catch{
+        }catch(e){
+            alert(e)
             this.setState({
                 error: "Can't find TV information."
             });

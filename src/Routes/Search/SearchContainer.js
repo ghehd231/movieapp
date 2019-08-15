@@ -9,7 +9,7 @@ export default class extends Component{
         tvResults: null,
         searchTerm: "",
         error: null,
-        loading: null,
+        loading: true
     }
 
     handleSubmit = event => {
@@ -40,7 +40,7 @@ export default class extends Component{
             } = await moviesApi.search(searchTerm);
             const {
                 data: { results: tvResults }
-            } = await moviesApi.search(searchTerm);
+            } = await tvApi.search(searchTerm);
             this.setState({
                 movieResults,
                 tvResults

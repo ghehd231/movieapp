@@ -11,6 +11,7 @@ const Container = styled.div`
 
 
 const TVPresenter = ({topRated, popular, airing_today, loading, error}) => (
+    
     loading ? <Loader /> : (
         <Container>
              {topRated && topRated.length > 0 && (

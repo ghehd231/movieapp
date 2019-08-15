@@ -12,7 +12,7 @@ const Form = styled.form`
     margin-bottom: 50px;
     width: 100%;
 `;
-const Input = styled.div`
+const Input = styled.input`
     all: unset;
     font-size: 28px;
     width: 100%;
@@ -31,13 +31,13 @@ const SearchPresenter = ({
     <Container>
         <Form onSubmit={handleSubmit}>
             <Input
-             placeholder="Search MOvies or TV Shows.."
+             placeholder="Search Movies or TV Shows.."
              value ={searchTerm}
              onChange={updateTerm}
-             >
-            </Input>
+             />
+            
         </Form>
-        {loading ? (
+         {loading ? (
             <Loader />
         ): (
             <>
@@ -81,7 +81,7 @@ const SearchPresenter = ({
                 )
                 }
             </>
-        )}
+        )} 
     </Container>
 );
 

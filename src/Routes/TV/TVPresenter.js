@@ -5,15 +5,24 @@ import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
 import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
+import Helmet from "react-helmet";
+
+
 const Container = styled.div`
     padding: 0px 10px;
 `;
 
 
 const TVPresenter = ({topRated, popular, airing_today, loading, error}) => (
-    
-    loading ? <Loader /> : (
+    <>
+        <Helmet>
+          <title>tv | Nomflex</title>
+        </Helmet>
+        {loading ? <Loader /> : (
         <Container>
+            <Helmet>
+                <title>tv | Nomflix</title>
+            </Helmet>
              {topRated && topRated.length > 0 && (
             <Section title = "topRated">
                 {topRated.map(tv => (
@@ -62,7 +71,9 @@ const TVPresenter = ({topRated, popular, airing_today, loading, error}) => (
             {error && <Message color="#e74c3c" text={error}></Message>}
             
         </Container>
-    )
+    
+    )}
+    </>
 );
 
 TVPresenter.propTypes = {

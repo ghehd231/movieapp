@@ -23,7 +23,7 @@ export default class extends React.Component{
             
             const {
                 data: { results: airingToday }
-            } = await tvApi.airing_today();
+            } = await tvApi.airingToday();
             this.setState({
                 topRated,
                 popular,
